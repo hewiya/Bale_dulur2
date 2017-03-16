@@ -1,0 +1,120 @@
+body{
+	background:url(../../images/eew.jpg) fixed;
+	background-size:cover;
+	font-family:Gill Sans MT;
+	font-size:17px;
+}
+.pojok{
+	float:right;
+	margin-top:530px;
+	width:8%;
+	height:40px;
+	padding-top:15px;
+	padding-left:25px;
+	background-color:#fff;
+	text-decoration:none;
+	display:inline-block;
+	color:#000;
+}
+.pojok:hover{
+	background-color:#fa6363;
+	color:#fff;
+}
+.pojok1{
+	float:right;
+	margin-top:440px;
+	margin-right:-135px;
+	width:8%;
+	height:40px;
+	padding-top:15px;
+	padding-left:25px;
+	background-color:#fff;
+	color:#000;
+	text-decoration:none;
+	display:inline-block;
+}
+.pojok1:hover{
+	background-color:#F7BC63;
+	color:#fff;
+	text-decoration:none;
+	display:inline-block;
+}.pojok2{
+	float:right;
+	margin-top:350px;
+	margin-right:-135px;
+	width:8%;
+	height:40px;
+	padding-top:15px;
+	padding-left:25px;
+	background-color:#fff;
+	color:#000;
+	text-decoration:none;
+	display:inline-block;
+}
+.pojok2:hover{
+	background-color:#F7BC63;
+	color:#fff;
+}
+.tumpang{
+	width:22%;
+	height:80%;
+	margin-top:48px;
+	margin-left:80px;
+	padding-left:50px;
+	padding-right:50px;
+	padding-top:20px;
+	padding-bottom:30px;
+	background-color:#B98849;
+	opacity:0.95;
+	color:#fff;
+	font-family:Gill Sans MT;
+	font-size:17px;
+	float:left;
+}
+.tumpang2{
+	width:70%;
+	height:80%;
+	margin-top:48px;
+	margin-left:80px;
+	padding-left:50px;
+	padding-right:50px;
+	padding-top:20px;
+	padding-bottom:30px;
+	background-color:#B98849;
+	opacity:0.95;
+	color:#fff;
+	font-family:Gill Sans MT;
+	font-size:17px;
+	float:left;
+}
+.dudul{	
+	background:#000;
+	height:40px;
+	width:180px;
+	padding-top:15px;
+	padding-left:25px;
+	margin-left:46px;
+	color:#fff;
+	border:0px;
+	border-radius:4px;
+	text-decoration:none;
+	display:inline-block;
+}
+.dudul:hover{	
+	background:#29B8F3;
+	color:#000;
+}
+.omahtabel{
+	margin-left:60px;
+	margin-top:-40px;
+}
+.sisihtengen{
+	margin-top:35px;
+	width:400px;
+	float:right;
+	background-color:#8F6837;
+}
+.sisihkiwo{
+	width:500px;
+	float:left;
+}

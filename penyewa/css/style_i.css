@@ -1,0 +1,73 @@
+body{
+	background: #ecf0f1;
+}
+#modal-kotak{
+	padding-left:50px;
+	padding-right:75px;
+	margin:5% 30% 30% 30%;
+	width: auto;	
+	height: auto;
+	position: absolute;
+	position:fixed;
+	z-index:1002;
+	display: none;
+	background: white;
+	border-radius: 5px 5px 5px 5px;
+}
+#modal-kotakdaftar{
+	padding-left:45px;
+	padding-right:70px;
+	margin:5% 30% 30% 30%;
+	width: auto;	
+	height: auto;
+	position: absolute;
+	position:fixed;
+	z-index:999999999999999;
+	display: none;
+	background: white;
+	border-radius: 5px 5px 5px 5px;
+}
+#atas{
+	padding: 20px;	
+	padding-left:50px;
+}
+#bawah{
+	background: #fff;
+}
+ 
+#tombol-tutup{	
+	background: #e74c3c;
+	margin-left:175px;
+}
+#tombol-tutup,#tombol{
+	height: 30px;
+	width: 100px;
+	color: #fff;
+	border: 0px;
+}
+#tombol-tutup2{	
+	background: #e74c3c;
+	margin-left:150px;
+}
+#tombol-tutup2,#tombol{
+	height: 30px;
+	width: 100px;
+	color: #fff;
+	border: 0px;
+}
+#bg{
+	opacity:.50;
+	position: absolute;
+	display: none;
+	position: fixed;
+	top: 0%;
+	left: 0%;
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	z-index:1001;
+	opacity: 0.5;
+}
+#tombol{
+	background: #e74c3c;        
+}

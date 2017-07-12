@@ -2,10 +2,11 @@
 	$host="localhost";
 	$user="root";
 	$password="";
-	$database="bale";
-	$koneksi=mysql_connect($host,$user,$password);
+	$querry;
+	$database=$querry;
+	$koneksi=mysqli_connect($host,$user,$password,'bale');
 	if($koneksi){
-		$database=mysql_select_db("$database");
+		$querry=mysqli_select_db("$koneksi","$database");
 	}else{
 		echo "koneksi gagal !";
 	}

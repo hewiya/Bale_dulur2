@@ -1,0 +1,21 @@
+============================================================
+PKL UGM, KOMSI VOKASI UGM
+============================================================
+
+F.A.Q 
+
+Q: login admin di mana ?
+A: 
+
+Q: framework apa tidak ? kalo iya framework apa ?
+A: pake Framework CI 3.1.4
+
+Q: ada git nya ?
+A: versi pertama : https://github.com/Hantari/Bale_Dulur
+   versi kami : https://github.com/hewiya/CI_BaleDulur
+
+Q: pake tools apa aja
+A: PHP,CI,jquerry,mysql,js,bootsrap...
+
+Q: dokumentasi lain ? 
+A: kita ada dokumentasi di coding PHP dan html nya dan di file dokumentasi.txt

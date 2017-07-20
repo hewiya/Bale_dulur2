@@ -30,7 +30,8 @@ class User extends CI_Controller{
 		$data = array(
 			'nama' => $nama,
 			'email' => $email,
-			'password' => md5($password),
+			'password' => md5($password),		// sementara
+			//'password' => $password,
 			'privileges' => 2
 			);
 		

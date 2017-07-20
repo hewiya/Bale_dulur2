@@ -16,7 +16,8 @@ class Login extends CI_Controller{
 		$password = $this->input->post('password');
 		$where = array(
 			'email' => $username,
-			'password' => md5($password)
+			'password' => md5($password)		// sementara
+			//'password' => $password
 			);
 		$cek = $this->m_login->cek_login("user",$where)->num_rows();	//return nya hasil
 		if($cek > 0){
@@ -37,7 +38,6 @@ class Login extends CI_Controller{
 				'email' => $username,
 				'status' => "login"
 				);
-
 			
 			$this->session->set_userdata($data_session);
 			?> <script>
@@ -73,11 +73,13 @@ class Login extends CI_Controller{
 			}
 			$nama = $row->username_admin;
 			$id = $row->id_admin;
+			$id_select = "";
 			$hal = "index.php/login/indexadmin";
 			$data_session = array(
 				'id' => $id,
 				'nama' => $nama,
-				'tab' => $hal,								// test hal
+				'tab' => $hal,
+				'tampung' => $id_select,								// test hal
 				//'email' => $username,
 				'status' => "login"
 				);

@@ -67,9 +67,13 @@
 								if(isset($_GET['id_transaksi'])){
 								mysqli_query($link,"delete from transaksi where id_transaksi='".$_GET['id_transaksi']."'")or die(mysqli_error());
 								}
+								$query="select r.tipe,l.nama_lokasi,l.alamat, u.nama, u.* from rumah r, user u, lokasi l where r.id_rumah = r.id_rumah and u.id = u.id and r.id_lokasi = l.id_lokasi";
+								/* old
 								$query="select r.tipe,l.nama_lokasi,l.alamat, u.nama, t.* from rumah r, user u, lokasi l, transaksi t
 										where t.id_rumah = r.id_rumah and t.id = u.id and r.id_lokasi = l.id_lokasi
 								";
+								*/
+
 								/**$query="select a.id_rumah, c.nama_lokasi, b.nama, a.tipe, a.harga, a.deskripsi, a.foto, a.kapasitas,
 										a.kamar_tidur, a.kamar_mandi, a.parkir, a.internet, a.ac, a.verifkasi, a.dapur, a.mesin_cuci,
 										a.tv from rumah a, user b, lokasi c where a.id_lokasi=c.id_lokasi and a.id=b.id";**/
@@ -89,11 +93,11 @@
 									<td><?=$baris['nama']?></td>
 									<td><?=$baris['nama_lokasi']. " ". $baris['alamat']?>
 										<br>
-										<?= $baris['tipe'];?>
+										<?//= $baris['tipe'];?>
 									</td>
-									<td><?=$baris['tanggal_mulai']?></td>
-									<td><?=$baris['tanggal_selesai']?></td>
-									<td><?php
+									<td><?//=$baris['tanggal_mulai']?></td>
+									<td><?//=$baris['tanggal_selesai']?></td>
+									<td><?php /*
 										switch($baris['status'])
 										{
 											case '1':
@@ -108,14 +112,12 @@
 											case '4':
 												echo 'Dicancel';
 											break;
-										}
+										} */
 									?></td>
 									
-									<td><a href="index.php?hal=tabel_transaksi&id_transaksi=<?=$baris['id_transaksi']?>"><button class="btn btn-danger btn-xs">
+									<!-- <? /*<td><a href="index.php?hal=tabel_transaksi&id_transaksi=<?=$baris['id_transaksi']?>"><button class="btn btn-danger btn-xs">
 											<i class='fa fa-trash-o '></i></button></a>
-                                   
-									
-									</td>
+									</td> */ ?> -->
 									
 								</tr>
 								<?php

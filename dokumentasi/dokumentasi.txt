@@ -5,7 +5,7 @@ PKL UGM, KOMSI VOKASI UGM
 F.A.Q 
 
 Q: login admin di mana ?
-A: 
+A: http://localhost/CI_bale_dulur/index.php/login/loginadmin
 
 Q: framework apa tidak ? kalo iya framework apa ?
 A: pake Framework CI 3.1.4

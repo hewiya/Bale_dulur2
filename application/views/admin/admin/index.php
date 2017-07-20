@@ -152,7 +152,11 @@
                 //$data = array(
                 //        'ambil' => '0'
                 //        );
-                $this->load->view($hal);
+                if(isset($data)){
+                  $this->load->view($hal,$data);
+                } else {
+                  $this->load->view($hal);
+                }
 							?>
 					<div class="col-lg-9 main-chart">
 					

@@ -18,4 +18,9 @@ class M_data extends CI_Model{
 		//return $this->db->where($email,$session);
 	}
 
+	function update_user($table,$where,$id){
+		$this->db->where('id',$id);
+		$this->db->update($table,$where);
+	}
+
 }

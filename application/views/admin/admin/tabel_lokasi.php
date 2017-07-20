@@ -33,6 +33,8 @@
 		background-color:#00A69A;
 	}-->
 </style>
+<!-- Sweet alert -->
+<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/admin/assets/css/sweetalert.css">
   <div class="row mt">
                   <div class="col-md-12">
 				  
@@ -66,7 +68,7 @@
 								// mysqli_query($link,"delete from lokasi where id_lokasi='".$_GET['id_lokasi']."'")or die(mysqli_error($link));
 								// }
 								$query="select * from lokasi";
-								$perpage=2;
+								$perpage=5;
 								$page=isset($_GET['page'])? $_GET['page']:"";
 								empty($page)?$page=1:"";
 								$offset=($page-1)*$perpage;
@@ -85,7 +87,73 @@
                                     <a href="?hal=tabel_lokasi&id_lokasi=<?=$baris['id_lokasi']?>"><button onclick="myFunction()" class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button></a>
 									<a href="index.php?hal=tampil_map&id_lokasi=<?=$baris['id_lokasi']?>"><button class="btn btn-success btn-xs"><i class="fa fa-file-image-o" aria-hidden="true"></i></button></a>
 									</td> */ ?> -->
-									
+
+									<td>
+									<!-- <button class="btn btn-success btn-xs" id="<?php //echo $no ?>" 
+										onclick="
+											$().ready(function(e){
+												var id_lokasi = '<?php //echo $baris['id_lokasi'];?>' ;
+												console.log(id) ; // buat nge-checK kalo dah lancar di komen aja ini consolelog nya !
+												swal({
+										            title: 'Lokasi',
+										            text: 'id_lokasi = '+id_lokasi,
+										            confirmButtonText: 'Yes!',
+										            showCancelButton: true,
+										            closeOnConfirm: false
+											        },function() {
+											            // This function will run ONLY if the user clicked ok
+											            // Only here we want to send the request to the server!
+											            $.ajax({
+											            	//method: 'GET',
+											                type: 'GET',
+											                url: '<?php //echo base_url();?>index.php/controler2/verifikasi?change=true&id='+id,
+											                success: function (res) {
+											                    swal({title: 'Terverifikasi', text: 'id = '+res, type: 'success'},
+											                    	function(){
+											                    		window.location.reload();
+											                    	});	
+											                },
+											                error : function(err){
+																console.log(err) ;
+														 	}
+											            });
+											        });
+											}) ;
+										">
+									<i class="fa fa-file-image-o" aria-hidden="true"></i></button> -->
+
+									<button class="btn btn-danger btn-xs" id="<?php echo $no ?>" 
+										onclick="
+											$().ready(function(e){
+												var id_lokasi = '<?php echo $baris['id_lokasi'];?>' ;
+												console.log(id) ;
+												swal({
+										            title: 'Hapus lokasi ?',
+										            text: 'id = '+id_lokasi,
+										            type: 'warning',
+										            confirmButtonText: 'Yes!',
+										            showCancelButton: true,
+										            closeOnConfirm: false
+											        },function() {
+											            $.ajax({
+											            	//method: 'GET',
+											                type: 'GET',
+											                url: '<?php echo base_url();?>index.php/controler2/admin_delete_lokasi?change=true&id_lokasi='+id_lokasi,
+											                success: function (res) {
+											                    swal({title: 'Berhasil Dihapus', text: 'id = '+res, type: 'success'},
+											                    	function(){
+											                    		window.location.reload();
+											                    	});	
+											                },
+											                error : function(err){
+																console.log(err) ;
+														 	}
+											            });
+											        });
+											}) ;
+										">
+										<i class="fa fa-trash-o" aria-hidden="true"></i></button>
+									</td>
 								</tr>
 								<?php
 								$no++;
@@ -129,11 +197,14 @@
   <script>
       //custom select box
 
-      $(function(){
-          $('select.styled').customSelect();
-      });
+      //$(function(){
+      //    $('select.styled').customSelect();
+      //});
 
   </script>
+  <!-- Sweet alert js -->
+  	<script type="text/javascript" src="<?php echo base_url() ?>assets/admin/assets/js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="<?php echo base_url() ?>assets/admin/assets/js/sweetalert.min.js"></script>
   <script>
   
 	function myFunction() {

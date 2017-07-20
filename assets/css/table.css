@@ -9,6 +9,10 @@ table {
     box-shadow:  0px 2px 1px 5px rgba(242, 242, 242, 0.1);
 }
 
+submit{
+	text-align: center;
+}
+
 .zebra {
     border: 1px solid #555;
 }
@@ -44,3 +48,4 @@ table {
 	background:#404040;
 	color:#fff;
 }
+

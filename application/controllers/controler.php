@@ -8,6 +8,7 @@ class Controler extends CI_Controller {
 		parent::__construct();		
 		$this->load->model('koneksi');
 		$this->load->model('m_login');
+		$this->load->model('m_data');
 	}
 
 	function user(){
@@ -15,7 +16,10 @@ class Controler extends CI_Controller {
 		$this->load->view('welcome/index2.php',$data);
 	}
 	
-	// under construction
+	// // // // // // // // //
+	// under construction	//
+	// // // // // // // // //
+
 	function simpanrumah(){
 	$x = $_GET['x'];
 	$y = $_GET['y'];
@@ -40,9 +44,10 @@ class Controler extends CI_Controller {
 		}
 	}	
 
-	//
-	//	Admin 
-	//
+	// // // // // // // // // //
+	//	Admin - Div Panel bar  //
+	// // // // // // // // // //
+
 	function set_hal_welcome(){
 		$this->session->set_userdata("hal","admin/admin/welcome");
 		redirect(base_url('index.php/login/indexadmin'));
@@ -68,40 +73,45 @@ class Controler extends CI_Controller {
 		redirect(base_url('index.php/login/indexadmin'));
 	}
 
+	// // // // // // // // // //
+	// Admin - load Edit user  //
+	// // // // // // // // // //
 
-	//
-	//	di koment aja.
-	//
-	/*
-	function tabel_rumah(){
-		$hal = $this->session->userdata("hal");
-		if ($hal = "index.php/controler/tabel_rumah") {
-			$this->load->view('admin/admin/tabel_rumah');
+	function set_hal_edit_user(){
+		//$this->session->set_userdata("hal","index.php/login/tabel_user");
+		if(isset($_GET['id_user'])){
+			$id_user=$_GET['id_user'];//$ambil;
+			$this->session->set_userdata("hal","admin/admin/edit_user");
+			redirect(base_url('index.php/login/indexadmin'));
+			//window.location.reload();
+		}else{
+			die("Error No Id selected");
+			redirect(base_url('index.php/login/indexadmin'));
+			//window.location.reload();
 		}
+		//$this->session->set_userdata("hal","admin/admin/edit_user");
+		//redirect(base_url('index.php/login/indexadmin'));
 	}
-	function tabel_lokasi(){
-		$hal = $this->session->userdata("hal");
-		if ($hal = "index.php/login/tabel_lokasi") {
-			$this->load->view('admin/admin/tabel_lokasi');
-		}
-	}
-	function tabel_transaksi(){
-		$hal = $this->session->userdata("hal");
-		if ($hal = "index.php/login/tabel_transaksi") {
-			$this->load->view('admin/admin/tabel_transaksi');
-		}
-	}
-	function tabel_user(){
-		$hal = $this->session->userdata("hal");
-		if ($hal = "index.php/login/tabel_user") {
-			$this->load->view('admin/admin/tabel_user');
-		}
-	}
-	*/
 
-	//
-	//	kebawah hanya Fungsi nge-load halaman
-	//
+	function edit_user($id){
+	//if(isset($_GET['id_user'])){
+	if(isset($id)){
+		$this->session->set_userdata("tampung",$id);
+		//$data = array('id_user' => $id);
+		//$data = array('id_user' => $_GET['id_user']);
+		$this->session->set_userdata("hal","admin/admin/edit_user");
+		//$this->load->view('admin/admin/edit_user',$data);
+		//redirect(base_url('index.php/login/indexadmin?change=true&id_user='.$_GET['id_user']));
+		//redirect(base_url('index.php/login/indexadmin?change=true&id_user='.$id));
+		} else {
+			die("no id selected");
+		}
+	}
+
+
+	// // // // // // // // // // // // // // //
+	//	kebawah hanya Fungsi nge-load halaman // 
+	// // // // // // // // // // // // // // //
 
 	function indexlatlong(){
 		$this->load->view('pemilik/latlong/index');

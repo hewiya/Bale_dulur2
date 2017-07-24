@@ -56,6 +56,30 @@
 			}
 		}
 	</script>
+	<style>
+		.datepicker{z-index:1151;}
+	    </style>
+	    
+			<script src="<?php echo base_url() ?>assets/penyewa/js/jquery-1.10.2.js" type="text/javascript"></script>
+			<script src="<?php echo base_url() ?>assets/penyewa/js/jquery-ui.js" type="text/javascript"></script>
+			<script>
+				$(function() {
+					$( "#datepicker" ).datepicker({ dateFormat: 'yy-mm-dd' });
+				});
+			</script>
+			<style>
+			  body {
+				background: #f5f5f5;
+				margin: 0;
+				padding: 20px 0 0 0;
+				text-align: center;
+				font-size: 16px;
+			  }
+			  h1 {
+				color: #222;
+				font-size: 24px;
+			  }
+	</style> 
     </head>
     <body>
     <div class="atas">
@@ -84,8 +108,8 @@
 					}
 					if($data == ""){
 						?> <img src='<?php echo base_url('assets/images/default.jpg'); ?>' width='100px' height='100px' class='img-circle img-responsive'> <?php
-					}else{
-						?> <img src='<?php echo base_url('images/'.$data); ?>' width='100px' height='100px' class="img-circle img-responsive"/> <?php  // masih harus di benarkan !
+					}else{							// echo base_url('assets/images/'.$data);
+						?> <img src="<?php echo base_url('images/'.$data); ?>" width='100px' height='100px' class="img-circle img-responsive"/> <?php  // masih harus di benarkan !
 					}
 					?> 
 					</div>
@@ -102,6 +126,10 @@
 	                    <dd>Male</dd>
 	                  </dl>
 	                </div>-->
+	                <center><a href="<?php echo base_url('index.php/user/profil_upload'); ?>" class="btn btn-primary" >upload</a></center>
+					</form>
+	                <form action="<?php echo base_url('index.php/user/update_profil'); ?>" method="post" enctype="multipart/form-data">
+						<!-- <center><input type="file" name="file"> -->
 	                <div class=" col-md-9 col-lg-9 "> 
 	                  <table class="table table-user-information">
 	                    <tbody>
@@ -111,9 +139,10 @@
 							<td><?php
 								$q=mysqli_query($link,"select * from user where  id='".$_SESSION['id']."'");
 								while($t=mysqli_fetch_array($q)){
-								echo $t['nama'];
+								?><input type="text" name="nama" value="<?php echo $t['nama']; ?>"><?php
 								}		
-							?>
+								?>
+								
 							</td>
 						</tr>
 						<tr>
@@ -122,7 +151,7 @@
 							<td><?php
 								$q=mysqli_query($link,"select * from user where  id='".$_SESSION['id']."'");
 								while($t=mysqli_fetch_array($q)){
-									echo $t['email'];
+								?><input type="text" name="email" value="<?php echo $t['email']; ?>"><?php
 								}		
 							?>
 							</td>
@@ -133,7 +162,7 @@
 							<td><?php
 								$q=mysqli_query($link,"select * from user where  id='".$_SESSION['id']."'");
 								while($t=mysqli_fetch_array($q)){
-									echo $t['tanggal_lahir'];
+								?><input type="text" name="tanggal_lahir" id="datepicker" value="<?php echo $t['tanggal_lahir']; ?>"><?php
 								}		
 							?>
 							</td>
@@ -144,25 +173,21 @@
 							<td><?php
 								$q=mysqli_query($link,"select * from user where  id='".$_SESSION['id']."'");
 								while($t=mysqli_fetch_array($q)){
-									echo $t['telpon'];
+								?><input type="text" name="telpon" value="<?php echo $t['telpon']; ?>"><?php
 								}		
 							?>
 							</td>
 						</tr>
+
 	                    </tbody>
 	                  </table>
-	                  
-	                  <a href="<?php echo base_url('index.php/user/edit_profil'); ?>" class="btn btn-primary">Edit Profil</a>
+	                  <input type="submit" name="submit" class="btn btn-primary" value="Save">
+	                  <!-- <a href="#" class="btn btn-primary">Edit Profil</a> -->
 	                  <!-- <a href="#" class="btn btn-primary">Profil Tuan Rumah</a> -->
 	                </div>
+	                </form></center>
 	              </div>
 	            </div>
-	                 <div class="panel-footer">
-								<p class=" text-info">Last See : <span id="time"></span></p>
-
-								<script>var today = new Date();
- 								document.getElementById('time').innerHTML=today;</script>
-	                    </div>
 	            
 	          </div>
 	        </div>

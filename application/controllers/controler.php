@@ -1,4 +1,12 @@
 <?php
+// // // // // // // // // // // // // // // // // // // // // //
+// Controler buat function-function buat fungsi halaman admin  //
+// // // // // // // // // // // // // // // // // // // // // //
+
+/*
+	PKL Vokasi UGM Q.A
+	ada file Dokumentasi.txt untuk user guide dan Q.A seputar fungsi-fungsi yg ada di Bale_Dulur
+*/
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Controler extends CI_Controller {

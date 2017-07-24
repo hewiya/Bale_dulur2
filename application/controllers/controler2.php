@@ -1,8 +1,14 @@
 <?php
 
-//
-// Controler2 buat function-function admin
-//
+// // // // // // // // // // // // // // // //
+// Controler2 buat function-function admin   //
+// // // // // // // // // // // // // // // //
+
+/*
+	PKL Vokasi UGM Q.A
+	ada file Dokumentasi.txt untuk user guide dan Q.A seputar fungsi-fungsi yg ada di Bale_Dulur
+*/
+
 class Controler2 extends CI_Controller {
 	function __construct(){
 		parent::__construct();		

@@ -7,15 +7,27 @@ F.A.Q
 Q: login admin di mana ?
 A: http://localhost/CI_bale_dulur/index.php/login/loginadmin
 
-Q: framework apa tidak ? kalo iya framework apa ?
+Q: framework pake apa tidak ? kalo iya framework apa ?
 A: pake Framework CI 3.1.4
 
 Q: ada git nya ?
 A: versi pertama : https://github.com/Hantari/Bale_Dulur
-   versi kami : https://github.com/hewiya/CI_BaleDulur
+   versi kami : hhttps://github.com/hewiya/Bale_dulur2
 
 Q: pake tools apa aja
-A: PHP,CI,jquerry,mysql,js,bootsrap...
+A: PHP,ajax,CI,jquerry,mysql,js,css,bootsrap,sweetalert...
 
 Q: dokumentasi lain ? 
 A: kita ada dokumentasi di coding PHP dan html nya dan di file dokumentasi.txt
+
+Q: database ?
+A: kita pake mysql , databse nya namanya "bale" sudah ada di dalam CI tinggal export
+
+Q: ada error di js/ajax nya !
+A: coba buka pake chrome terbaru untuk ajax
+
+Q: kenapa pake mysqli_querry untuk eksekusi querry ? kok ngga mysql_querry aja ?
+A: untuk CI terbaru di sarankan tidak memakai command querry mysql lagi. jadi lebih baik pake mysqli / PDO. kita pake mysqli untuk login dan querry lainya
+
+Q: kalo ada masalah ada kontak yg bisa di hubungi ?
+A: heru.widiyanto@ugm.mail.ac.id   atau tanya ke superviser

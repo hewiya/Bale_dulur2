@@ -1,5 +1,13 @@
 <?php 
 
+// // // // // // // // // // // // // // // // // // // // // // // // //
+// controler login buat function-function yg berhubungan dengan login   //
+// // // // // // // // // // // // // // // // // // // // // // // // //
+
+/*
+	PKL Vokasi UGM Q.A
+	ada file Dokumentasi.txt untuk user guide dan Q.A seputar fungsi-fungsi yg ada di Bale_Dulur
+*/
 
 class Login extends CI_Controller{
 

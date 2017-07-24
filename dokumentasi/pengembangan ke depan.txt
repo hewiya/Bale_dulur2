@@ -1,0 +1,19 @@
+============================================================
+PKL UGM, KOMSI VOKASI UGM
+============================================================
+
+Fitur yg diharapkan :
+acuan : www.airbnb.com
+
+fitur yg sudah bisa :
+login
+logout
+daftar
+profil
+edit profil : ganti foto,nama,no telp,dll.
+session jalan
+dashboard admin
+admin edit : lokasi,rumah,user
+dokumentasi
+
+

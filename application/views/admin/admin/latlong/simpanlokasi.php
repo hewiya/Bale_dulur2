@@ -1,7 +1,13 @@
 <?php
+
+// // // // // // // // //
+// belum di aplikasikan // // // //
+// // // // // // // // //
+
 include "configg.php";
  
 $x = $_GET['x'];
+
 $y = $_GET['y'];
 $nama_lokasi = $_GET['nama_lokasi'];//judul--nama_lokasi
 $alamat = $_GET['alamat']; //alamat-- des

@@ -1,5 +1,9 @@
 <?php
 
+// // // // // // // // //
+// sudah di controler   //
+// // // // // // // // //
+
 define('DBHOST', 'localhost');
 define('DBUSER', 'root');
 define('DBPASS', '');

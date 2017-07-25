@@ -1,3 +1,9 @@
+<!-- 										-->
+<!-- 										-->
+<!-- 			Belum dipakai !!!			-->
+<!-- 										-->
+<!-- 										-->
+
 		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/bs.css">
 		<link rel="stylesheet" href="css/table.css">

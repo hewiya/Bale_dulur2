@@ -77,31 +77,3 @@
 <button class="button" id="button"><a href="<?php echo base_url('index.php/controler/set_hal_user'); ?>">Cancel</button>
 </body>
 </html>
-<?php
-	// if(isset($_GET['edit'])){
-	// $id=$_GET['id_user'];
-	// $nama=$_GET['nama'];
-	// $email=$_GET['email'];
-	// $password=$_GET['password'];
-	// $privileges=$_GET['privileges'];
-	// $ganti="update user set
-	// 	nama='$nama', email='$email', password='$password', privileges='$privileges' where id='$id'";
-	// $hasil=mysqli_query($link,$ganti)or die(mysqli_error());
-	// if($hasil>0)
-	// {
-	// 	echo"<script>
-	// 		alert('Data Update');
-	// 		location.href='index.php?hal=tbl_user';
-	// 	</script>";
-	// }
-	// else
-	// 	{
-	// 	echo 
-	// 	"<script>
-	// 			alert('Data gagal Update');
-	// 			location.href='index.php?hal=edit_user';
-	// 	</script>";
-	
-	// }
-	// }
-?>

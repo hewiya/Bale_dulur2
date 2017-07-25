@@ -1,5 +1,9 @@
 <?php
 
+// // // // // // // // //
+// belum di aplikasikan // // // //
+// // // // // // // // //
+
 include ('configg.php');
 ?>
 <!DOCTYPE html>

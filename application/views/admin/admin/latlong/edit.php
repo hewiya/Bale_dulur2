@@ -1,4 +1,10 @@
 <?php
+
+// // // // // // // // //
+// belum di aplikasikan // // // //
+// // // // // // // // //
+
+
     include("configg.php");
     $id=$_GET['id'];
     $query=mysql_query("select * from lokasi where nomor='$id'") or die (mysql_error());

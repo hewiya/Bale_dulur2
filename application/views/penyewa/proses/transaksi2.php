@@ -1,3 +1,9 @@
+<!-- 										-->
+<!-- 										-->
+<!-- 			Belum dipakai !!!			-->
+<!-- 										-->
+<!-- 										-->
+
 <?php
 	session_start();
  include"../../lib/koneksi.php";

@@ -1,3 +1,9 @@
+<!--                              -->
+<!--                              -->
+<!--      Belum dipakai !!!       -->
+<!--                              -->
+<!--                              -->
+
 <?php
     include("configg.php");
     $id=$_GET['id'];

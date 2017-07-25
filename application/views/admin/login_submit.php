@@ -1,4 +1,9 @@
 <?php 
+
+// // // // // // // // //
+// sudah di controler   //
+// // // // // // // // //
+
 session_start();
 include "admin/config.php";
 $username_admin = $_POST['username_admin'];

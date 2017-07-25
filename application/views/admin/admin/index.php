@@ -1,17 +1,4 @@
 <?php
-	/*
-  session_start();
-	include('config.php');
-	if(!isset($_SESSION['username_admin'])){
-		
-		echo "<script>alert('Anda belum login');</script>";
-		echo "<script>location.href='../index.php'</script>";
-		die("Anda belum login");
-	}
-	if(!isset($_SESSION['password_admin'])){
-		die("Anda bukan admin");
-	}
-  */
   if(!$_SESSION['status']) {
     header("location:loginadmin");
   }

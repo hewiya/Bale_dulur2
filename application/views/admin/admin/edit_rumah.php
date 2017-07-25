@@ -1,5 +1,9 @@
 <?php
 
+// // // // // // // // //
+// sudah di controler   //
+// // // // // // // // //
+
 include('configg.php');
 	if(isset($_GET['id_rumah'])){
 	$id_rumah=isset($_GET['id_rumah'])? $_GET['id_rumah']:"";

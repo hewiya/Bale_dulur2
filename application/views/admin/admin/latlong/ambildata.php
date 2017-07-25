@@ -1,4 +1,10 @@
 <?php
+
+// // // // // // // // //
+// belum di aplikasikan // // // //
+// // // // // // // // //
+
+
 include "../configg.php";
 $akhir = $_GET['akhir'];
 if($akhir==1){

@@ -1,3 +1,9 @@
+<!-- 										-->
+<!-- 										-->
+<!-- 			Belum dipakai !!!			-->
+<!-- 										-->
+<!-- 										-->
+
 <div class="tumpang2">
 <?php
 	if(isset($_POST['gbr']))

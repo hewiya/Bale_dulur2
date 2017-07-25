@@ -1,4 +1,10 @@
 <?php
+
+// // // // // // // // //
+// di model harusnya // // // //
+// // // // // // // // //
+
+
 $host="localhost";
 $user="root";
 $passwd="";

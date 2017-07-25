@@ -1,5 +1,4 @@
 <?php   
-    //session_start();
 	if(!$_SESSION['status']) {
     header("location:index");
 }
@@ -78,7 +77,7 @@
 		<a href="<?php echo base_url('index.php/login/profilpenyewa'); //link kalo nge-klik hello ?>"><div id="kotak1">&nbsp;&nbsp;&nbsp;Hello ,<?php echo $this->session->userdata("nama"); ?></div></a><br/>
 		<a href="<?php echo base_url('index.php/login/indexpenyewa'); ?>"><div id="kotak">&nbsp;&nbsp;&nbsp;Mulai Cari Rumah</div></a><br/>
 		<a href="<?php echo base_url('index.php/login/indexpemilik'); ?>"><div id="kotak">&nbsp;&nbsp;&nbsp;Menjadi Tuan Rumah</div></a><br/>
-		<a href="<?php echo base_url('index.php/login/logout'); ?>"><onClick='return logout()'><div id="kotak2">&nbsp;&nbsp;&nbsp;Sign Out</div></a><br/>
+		<a href="<?php echo base_url('index.php/login/logout'); ?>" onClick='return logout()'><div id="kotak2">&nbsp;&nbsp;&nbsp;Sign Out</div></a><br/>
 
 		<script src="<?php echo base_url() ?>assets/js/jquery.min.js"></script>
         <script src="<?php echo base_url() ?>assets/js/bootstrap.min.js"></script>

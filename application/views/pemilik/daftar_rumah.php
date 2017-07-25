@@ -1,3 +1,9 @@
+<!-- 										-->
+<!-- 										-->
+<!-- 			Belum dipakai !!!			-->
+<!-- 										-->
+<!-- 										-->
+
 <div class="tumpang2">
 	<h1>Daftar Rumah</h1><br/>
 	<table>

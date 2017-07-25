@@ -1,15 +1,4 @@
 <?php
-	//session_start();
-	//include('../lib/koneksi.php');
-	//if(!isset($_SESSION['email'])){
-	//	echo "<script>alert('Anda belum login, silahkan Sign In untuk melanjutkan');</script>";
-	//	echo "<script>location.href='../index.php'</script>";
-	//	die("Anda belum login");
-	//}
-	//if(!isset($_SESSION['password'])){
-	//	die("Anda belum terdaftar, silahkan Sign In untuk melanjutkan");
-	//}   
-    //session_start();
 	if(!$_SESSION['status']) {
     header("location:index");
 }

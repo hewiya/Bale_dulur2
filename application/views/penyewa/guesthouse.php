@@ -1,3 +1,9 @@
+<!-- 										-->
+<!-- 										-->
+<!-- 			Belum dipakai !!!			-->
+<!-- 										-->
+<!-- 										-->
+
 <?php
 	include"../lib/koneksi.php";
 	$id_rumah = isset($_GET['id_rumah']) ? $_GET["id_rumah"] : "" ;

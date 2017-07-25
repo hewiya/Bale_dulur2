@@ -1,15 +1,4 @@
 <?php
-	//session_start();
-	//include('../lib/koneksi.php');
-	//if(!isset($_SESSION['email'])){
-	//	echo "<script>alert('Anda belum login, silahkan Sign In untuk melanjutkan');</script>";
-	//	echo "<script>location.href='../index.php'</script>";
-	//	die("Anda belum login");
-	//}
-	//if(!isset($_SESSION['password'])){
-	//	die("Anda belum terdaftar, silahkan Sign In untuk melanjutkan");
-	//}   
-    //session_start();
 	if(!$_SESSION['status']) {
     header("location:index");
 	}
@@ -112,21 +101,10 @@
 						?> <img src="<?php echo base_url('images/'.$data); ?>" width='100px' height='100px' class="img-circle img-responsive"/> <?php  // masih harus di benarkan !
 					}
 					?> 
+					<br></br>
+					<center><a href="<?php echo base_url('index.php/user/profil_upload'); ?>" class="btn btn-primary" >upload</a></center>
 					</div>
-	                
-	                <!--<div class="col-xs-10 col-sm-10 hidden-md hidden-lg"> <br>
-	                  <dl>
-	                    <dt>DEPARTMENT:</dt>
-	                    <dd>Administrator</dd>
-	                    <dt>HIRE DATE</dt>
-	                    <dd>11/12/2013</dd>
-	                    <dt>DATE OF BIRTH</dt>
-	                       <dd>11/12/2013</dd>
-	                    <dt>GENDER</dt>
-	                    <dd>Male</dd>
-	                  </dl>
-	                </div>-->
-	                <center><a href="<?php echo base_url('index.php/user/profil_upload'); ?>" class="btn btn-primary" >upload</a></center>
+
 					</form>
 	                <form action="<?php echo base_url('index.php/user/update_profil'); ?>" method="post" enctype="multipart/form-data">
 						<!-- <center><input type="file" name="file"> -->

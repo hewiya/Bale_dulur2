@@ -1,4 +1,9 @@
 <?php
+// // // // // // // // //
+// belum di aplikasikan // // // //
+// // // // // // // // //
+
+
 	include"configg.php";
 	if(isset($_GET['id_rumah'])){
 	$detail=isset($_GET['id_rumah'])? $_GET['id_rumah']:"";

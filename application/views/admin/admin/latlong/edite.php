@@ -1,4 +1,10 @@
 <?php
+
+// // // // // // // // //
+// belum di aplikasikan // // // //
+// // // // // // // // //
+
+
    include("koneksi.php");
    $id=$_POST['nomor'];
    $nama=$_POST['nama'];

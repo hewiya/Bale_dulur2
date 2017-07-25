@@ -1,4 +1,9 @@
 <?php
+
+// // // // // // // // //
+// belum di aplikasikan // // // //
+// // // // // // // // //
+
 	require_once("configg.php");
 	$rumah_id = isset($_GET['rumah_id']) ? $_GET["rumah_id"] : "" ;
 ?>

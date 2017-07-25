@@ -1,4 +1,9 @@
 <?php
+
+// // // // // // // // //
+// belum di aplikasikan // // // //
+// // // // // // // // //
+
 	include ("configg.php");
 ?>
 <html lang="en">

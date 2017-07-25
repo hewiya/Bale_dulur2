@@ -1,5 +1,9 @@
 <?php
 
+// // // // // // // // //
+// belum di aplikasikan //
+// // // // // // // // //
+
 include ('configg.php');
 
   $carimap = mysql_query("select * from lokasi where id_lokasi='$_GET[id_lokasi]'");

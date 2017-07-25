@@ -1,4 +1,9 @@
 <?php
+
+// // // // // // // // // // // //
+// pake mysqli di model harunysa // // // //
+// // // // // // // // // // // //
+
 	$host="localhost";
 	$user="root";
 	$password="";

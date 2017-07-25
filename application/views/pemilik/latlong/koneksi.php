@@ -1,4 +1,9 @@
 <?php
+
+// // // // // // // // //
+// sudah di controler   //
+// // // // // // // // //
+
 $host="localhost";
 $user="root";
 $passwd="";

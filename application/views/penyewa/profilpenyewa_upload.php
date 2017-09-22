@@ -26,11 +26,12 @@
                     <br /> <br />
                 </div>
                 <div class=" col-md-9 col-lg-9 "> 
+                  <img id="image" width='100px' height='100px' class="img-circle img-responsive" />
 		            <?php echo $error;?>
 
 					<?php echo form_open_multipart('user/do_upload');?>
 
-					<input type="file" name="userfile" size="20" />
+					<input type="file" name="userfile" id="files" size="20" />
 
 					<br /><br />
 
@@ -45,4 +46,17 @@
     </div>
 </div>
 </body>
+<script type="text/javascript">
+document.getElementById("files").onchange = function () {
+    var reader = new FileReader();
+
+    reader.onload = function (e) {
+        // get loaded data and render thumbnail.
+        document.getElementById("image").src = e.target.result;
+    };
+
+    // read the image file as a data URL.
+    reader.readAsDataURL(this.files[0]);
+};
+</script>
 </html>

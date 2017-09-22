@@ -1,6 +1,19 @@
 ============================================================
 PKL UGM, KOMSI VOKASI UGM
 ============================================================
+(!)																												(!)
+(!)	saat ini sistem yang kita kembangkan masih jauh dari layak dan masih butuh banyak pengembangan lebih lanjut	(!)
+(!)																												(!)
+
+
+// Content
+// |- Summary
+// |- Trouble saat pengembangan
+// |- BUG
+// |- 
+//
+//
+//
 
 Fitur yg diharapkan :
 acuan : www.airbnb.com
@@ -14,6 +27,109 @@ edit profil : ganti foto,nama,no telp,dll.
 session jalan
 dashboard admin
 admin edit : lokasi,rumah,user
-dokumentasi
+dokumentasi internal
 
 
+Kesalahan pada pengembangan kita (internal)
+-kurang waktu
+-butuh lebih banyak diskusi
+-terlalu lama menganalisa
+
+
+// // // // // // // // // // //
+// Trouble saat pegembangan   //
+// // // // // // // // // // //
+
+1.Kesalahan rancangan Database 
+	dari db "bale" sebelumnya juga sangat kurang jadi kita sangat bingung untuk mengembangkan tanpa menghilangkan beberapa fitur lama yang membutuhkan acuan data db lama tsbt. db yg kita perbaiki juga masih mempunyai kesalahan samapai sekarang.
+	yaitu : - tidak ada relasi
+			- foreign_key belum terlalu di pakai
+			- tidak ada relasi antara tabel rumah dan user sehingga sangat susah untuk membuat transaksi
+			- tabel gambar,fasilitas mempunyai foreign key dari id_lokasi tabel lokasi tapi tidak ada relasi
+			- jika di tambahkan relasi kemungkinan akan terjadi error di fungsi-fungsi controler tertentu
+
+	yang mungkin bisa di lakukan :
+			+ merombak total database dan mematikan(meng-comment//) fungsi-fungsi terkait untuk kemudian di sesuaikan
+			+ merombak ulang sistem , kalau mengembangkan dirasa lebih susah,lama,dan tidak bisa ditemukan solusi yang baik
+
+2.tidak terlaksananya fitur transaksi
+	karena transaksi di butuhkan sebuah database yang berelasi dan terstruktur dengan baik. kita sangat susah untuk membuat fungsi transaksi. salah satunya adalah relasi antara :
+				Admin ------ Rumah
+				  |				|
+				  |				|
+				 user ---- transaksi	
+	dimana admin mengetahui transaksi antar user. dan user dapat mengetahui transaksi property nya sendiri. jika relasi yang baik maka bisa dihasilkan informasi seperti rumah paling sering dibooking, user yang punya rumah paling sering di pesan, dsb.
+
+	di projek sebelumnya juga sudah ada fungsi transaksi berbasis php tapi tidak bekerja dengan baik.
+
+	yang mungkin bisa dilakukan :
+			+ merombak ulang database dan fungsi yang sudah jalan tanpa menghilangkan fitur yang sudah ada
+			+ merombak ulang sistem , kalau mengembangkan dirasa lebih susah,lama,dan tidak bisa ditemukan solusi yang baik
+
+3.peralihan ke framework CI
+	sebenarnya dari projek sebelumnya yang murni php,js bisa dikembangkan dari situ juga, tapi karena kita rasa coding nya tidak rapi kita coba frameworkan projek tsbt ke CI. tidak masalah pakai framework berbasis M-V-C apasaja (CI,laravel,slim,dsb). kita pakai CI karena dokumentasi yang lengkap dari dev CI sendiri dan karena CI framework instan, tinggal pakai tidak perlu mengintegrasikan ke composer. dan banyak permasalahan yang berhasil di pecahkan di stackoverflow.com berkaitan dengan CI.
+
+	tapi mem-frameworkan tidak semudah copy paste fungsi ke controller. kita harus mengubah fungsi-fungsi yang ada. dan memilah mana yang di view, di model, dan controller. dan fungsi harus kita modifikasi agar bisa digunakan sebagaimana mestinya.
+	hal ini sangat memakan waktu.
+
+	yang mungkin bisa dilakukan :
+			+ mencoba framework lain yang di rasa lebih mudah
+			+ merombak sistem dan di buat berbasis framework dari awal
+			+ tidak di frameworkan 
+
+4.mySQL_ & mySQLI_
+	sejak PHP 5 fungsi mysql_**** sudah tidak layak digunakan (deprecate). dan sejak PHP 7 fungsi mysql_*** sudah dihilangkan dari php. karena berbagai masalah. nah... di projek sebelumnya karena proses sql nya menggunakan mysql_ semua kita harus mengubah operasi sql ke mysqli_ karena CI 3.1.4 tidak mendukung operasi mysql_ lagi. hal ini juga memakan waktu dan menyusahkan peralihan ke framework
+
+	*jadi kalau ingin memakai operasi sql lebih baik pakai PDO / mysqli karena lebih future proof
+
+5.kurangnya dokumentasi dari pengembang sebelumnya
+	mungkin ada. tapi kita belum tahu hingga saat ini. hanya file master sistem sebelumnya dari alamat git dan laporan supervisor saja yang hanya bisa kita ketahui. hal ini juga mempersusah analisa sistem. karena kita harus mencari sendiri kekurangan apalagi dan apa yang sudah jalan selain yang diberitahu supervisor
+
+	yang mungkin bisa dilakukan :
+			+ aktif bertanya ke supervisor
+			+ menghubungi pengembang sebelumnya
+
+6.terlalu banyak asset
+	dari projek sebelumnya banyak sekali di temukan file-file duplikat .js dan .css di tiap folder dan membuat kita bingung untuk mengedit css dan mengimport nya. juga mempersulit melakukan peralihan ke CI karena kita harus mengimport kembali asset ke view setelah di rapikan. 
+
+	yang mungkin bisa dilakukan :
+			+ merapikan asset
+			+ mengurangi penggunaan asset luar
+
+
+// // // //
+// BUG   //
+// // // //
+
+1.masalah di db dan integrasi dengan API google map
+
+link > http://localhost/CI_Bale_dulur/index.php/login/indexpenyewa
+
+kronologi : icon rumah yang seharusnya keluar ada lebih dari 1 , tapi yang keluar cuma 1 dan jika di klik belum ada lanjutannya dan menghasilkan link kosong. (link kosong > http://localhost/CI_Bale_dulur/index.php/login/detail?id=5)
+
+2.penimbunan file foto profil
+
+pada saat ganti profil. yg di lakukan sistem adalah memakai gambar terbaru, bukan mengambil data yang sudah ada.
+jadi misal kalo ganti profil dengan gambar yg sama. maka gambar baru akan teruplod dan gamabar lama tertimbun di assets
+
+3.form uplod rumah yg independent
+
+link > http://localhost/CI_Bale_dulur/index.php/user/indexpemilik?hal=latlong/index  + lanjtan nya
+
+jadi saat pemasukan data lokasi,rumah,gambar. masing2 form bergerak secara individu. jadi kalau user sudah memasukan data sampai fasilitas tapi ingin membatalkan maka data dari form lokasi dan fasilitas tetap tersimpan di db dan form gambar kosong. hal ini bisa menyebabkan pembekakan data. 
+
+4.Lihat daftar
+
+link > http://localhost/CI_Bale_dulur/index.php/user/indexpemilik?hal=latlong/index 
+sesudah klik button lihat daftar
+
+pada saat pemindahan ke CI terjadi masalah sehingga halaman error. seharusnya isi nya riwayat daftar rumah yg sudah user(yg login) uplod.
+
+4.admin > transaksi
+
+link > http://localhost/CI_Bale_dulur/index.php/login/indexadmin
+di tab transaksi
+
+karena belum ada transaksi tapi sudah ada database nya jadi ada kolom yang masih kosong dan belum ada nya relasi apa2 dengan tabel transaksi di db
+
+5.masih bnyk bug yang belum kami temukan. 

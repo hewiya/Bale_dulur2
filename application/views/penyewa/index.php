@@ -1,74 +1,112 @@
 <?php
-	if(!$_SESSION['status']) {
+if(!$_SESSION['status']) {
     header("location:index");
-}
+	}
 ?>
 <!doctype html>
 <html>
     <head>
         <link rel="stylesheet" href="<?php echo base_url() ?>assets/penyewa/2/bootstrap.css"/>
 		<title>Bale Dulur</title>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link href="http://fonts.googleapis.com/css?family=Armata" rel="stylesheet" type="text/css">
-        <link href="<?php echo base_url() ?>assets/css/bootstrap.min.css" rel="stylesheet">
-        <link href="<?php echo base_url() ?>assets/dist/css/jquery.gridder.min.css" rel="stylesheet">
-        <link href="<?php echo base_url() ?>assets/css/demo.css" rel="stylesheet">
+        <link href="<?php echo base_url() ?>assets/penyewa/css/bootstrap.min.css" rel="stylesheet">
+        <link href="<?php echo base_url() ?>assets/penyewa/dist/css/jquery.gridder.min.css" el="stylesheet">
+        <link href="<?php echo base_url() ?>assets/penyewa/css/demo.css" rel="stylesheet">
 
 
-		<link href="<?php echo base_url() ?>assets/css/style.css" rel="stylesheet" type="text/css" />
-		<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/css/coin-slider.css" />
-		<script type="text/javascript" src="<?php echo base_url() ?>assets/js/cufon-yui.js"></script>
-		<script type="text/javascript" src="<?php echo base_url() ?>assets/js/cufon-aller.js"></script>
-		<script type="text/javascript" src="<?php echo base_url() ?>assets/js/jquery-1.4.2.min.js"></script>
-		<script type="text/javascript" src="<?php echo base_url() ?>assets/js/script.js"></script>
-		<script type="text/javascript" src="<?php echo base_url() ?>assets/js/coin-slider.min.js"></script>
+		<link href="<?php echo base_url() ?>assets/penyewa/css/style.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript" src="<?php echo base_url() ?>assets/penyewa/js/cufon-yui.js"></script>
+		<script type="text/javascript" src="<?php echo base_url() ?>assets/penyewa/js/cufon-aller.js"></script>
+		<script type="text/javascript" src="<?php echo base_url() ?>assets/penyewa/js/jquery-1.4.2.min.js"></script>
+		<script type="text/javascript" src="<?php echo base_url() ?>assets/penyewa/js/script.js"></script>
+		<script type="text/javascript" src="<?php echo base_url() ?>assets/penyewa/js/coin-slider.min.js"></script>
 
-		<link href="<?php echo base_url() ?>assets/js/js-image-slider.css" rel="stylesheet" type="text/css" />
-		<script src="<?php echo base_url() ?>assets/js/js-image-slider.js" type="text/javascript"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYjQzMQgwK8A57sdC30gLSdW09uP5ByXw&callback=initMap"></script>
+		<script type="text/javascript" src="<?php echo base_url() ?>assets/pemilik/latlong/jquery-1.7.1.min.js"></script>
 		
-		<script type="text/javascript" src="<?php echo base_url() ?>assets/js/jquery-3.1.1.min.js"></script>
-		<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/css/style_i.css">
-	
-		<link rel="stylesheet" href="<?php echo base_url() ?>assets/css/reset.css">
-		<link rel="stylesheet" href="<?php echo base_url() ?>assets/css/bs.css">
-		<link rel="stylesheet" href="<?php echo base_url() ?>assets/css/table.css">
-		<script type="text/javascript" src="<?php echo base_url() ?>assets/js/jquery.js"></script>
-		<script type="text/javascript" src="<?php echo base_url() ?>assets/js/jquery-1.3.2.js"></script>
 
-		<script>
-		function logout() {
-			if (confirm ("Apakah anda yakin akan logout ?")){
-			return true;
-			}else{
-			return false;
-			}
-		}
-	</script>
-	
+		<link href="<?php echo base_url() ?>assets/penyewa/js/js-image-slider.css" rel="stylesheet" type="text/css" />
+		<script src="<?php echo base_url() ?>assets/penyewa/js/js-image-slider.js" type="text/javascript"></script>
 		
-	    <style>
-		.datepicker{z-index:1151;}
-	    </style>
-	    <script>
-		$(function(){
-		    $("#tanggal").datepicker({
-			format:'yyyy-mm-dd'
-		    });
-			
-                });
-		$(function(){
-			$("#tanggal1").datepicker({
-			format:'yyyy-mm-dd'
-		    });
-		});
-	    </script>
-			 <script src="<?php echo base_url() ?>assets/assets/js/jquery-1.10.2.js" type="text/javascript"></script> 
-			<script src="<?php echo base_url() ?>assets/assets/js/jquery-ui.js" type="text/javascript"></script>
+		<script type="text/javascript" src="<?php echo base_url() ?>assets/penyewa/js/jquery-3.1.1.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/penyewa/css/style_i.css">
+	
+		<link rel="stylesheet" href="<?php echo base_url() ?>assets/penyewa/css/reset.css">
+		<link rel="stylesheet" href="<?php echo base_url() ?>assets/penyewa/css/bs.css">
+		<link rel="stylesheet" href="<?php echo base_url() ?>assets/penyewa/css/table.css">
+		<script type="text/javascript" src="<?php echo base_url() ?>assets/penyewa/js/jquery.js"></script>
+		<script type="text/javascript" src="<?php echo base_url() ?>assets/penyewa/js/jquery-1.3.2.js"></script>
+	
+	<script type="text/javascript">
+		function initialize() {
+            var latlng = new google.maps.LatLng(-7.797068, 110.370529);
+            var myOptions = {
+                zoom: 8,
+                center: latlng,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var map = new google.maps.Map(document.getElementById("petaku"),
+        myOptions);
+        }
+
+      $(document).ready(function(){
+        var Yogyakarta = new google.maps.LatLng(-7.797068, 110.370529);
+        var map = new google.maps.Map(document.getElementById('petaku'), {
+          zoom: 12,
+          center:  Yogyakarta
+        });      
+       <?php 
+        // $db = mysqli_connect("localhost","root","","bale"); //keep your db nam
+		// $sql="select * from lokasi, rumah where rumah.id_lokasi = lokasi.id_lokasi";
+		// $sth = $db->query($sql);
+		$query = $this->db->query("select * from lokasi, rumah where rumah.id_lokasi = lokasi.id_lokasi");
+
+		$i=0;
+		// while($result=mysqli_fetch_array($sth)){ 
+		foreach ($query->result_array() as $result){
+			?>
+		var lokasi<?php echo $i?> = new google.maps.LatLng(<?php echo $result['latitude']?>, <?php echo $result['longitude']?>);
+		var contentString<?php echo $i?> = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<?php echo '<img style="width:50px;" src="data:image/jpeg;base64,'.base64_encode( $result['foto'] ).'"/>';?>'+
+      '<h3 id="firstHeading" class="firstHeading"><?php echo $result['nama_lokasi']?></h3>'+
+      '<div id="bodyContent">'+      
+      '<p>Rp. <?php echo $result['harga']?></p>'+
+      '<p>Klik untuk melihat detail</p>'+
+      '</div>'+
+      '</div>';
+        var marker<?php echo $i?> = new google.maps.Marker({
+          position: lokasi<?php echo $i?> ,
+          map: map,
+          icon: '<?php echo base_url() ?>assets/pemilik/icon/restaurant.png',
+        });
+        var infowindow<?php echo $i?> = new google.maps.InfoWindow({
+    	content: contentString<?php echo $i?>,
+    	maxWidth : 200
+  });
+        marker<?php echo $i?>.addListener('mousemove', function() {
+    infowindow<?php echo $i?>.open(map, marker<?php echo $i?>);
+  });
+         marker<?php echo $i?>.addListener('mouseout', function() {
+    infowindow<?php echo $i?>.close(map, marker<?php echo $i?>);
+  });
+         marker<?php echo $i?>.addListener('click', function() {
+					window.open('<?php echo base_url() ?>index.php/login/detail?id=<?php echo $result['id_lokasi']?>')
+  });
+         
+        <?php $i++;}?>
+      });
+      
+</script>
+
 			<style>
 			  body {
 				background: #f5f5f5;
@@ -81,167 +119,39 @@
 				color: #222;
 				font-size: 24px;
 			  }
+
+.search_foto{
+	width: 200px;
+	height: 150px;
+}
+.data{
+	
+	width: 500px;
+}
 </style>
 	
 	
 	
     </head>
     <body>
-        <!-- Modal -->
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-                    </div>
-					<?php
-						//wot ?
-						//$id_rumah = isset($_GET['id_rumah']) ? $_GET["id_rumah"] : "" ;
-					?>
-					<form action="" method="post">
-					<div class="modal-body">
-						<table>
-							<tr>
-								<td>Nama Lokasi</td>
-								<td>:</td>
-								<td><?php
-									$query="SELECT * FROM rumah, lokasi 
-										WHERE lokasi.id_lokasi = rumah.id_lokasi
-										AND rumah.id_rumah =".$id_rumah;
-									$a=mysql_query($query);
-										$lokasi = mysql_fetch_array(($a));
-													
-									?>
-								<input type="text" name="lokasi" 
-									value="<?= $lokasi['nama_lokasi'];?>"> </td>
-							</tr>
-							<tr>
-								<td>Nama User</td>
-								<td>:</td>
-								<td><input type="text" name="id" value="<?= $_SESSION['id']; ?>"></td>
-							</tr>
-							<tr>
-								<td>Harga</td>
-								<td>:</td>
-								<td><input type="text" name="harga" value="<?= $lokasi['harga'];?>"></td>
-							</tr>
-							<tr class="modal-body">
-								<td>Tanggal Mulai</td>
-								<td>:</td>
-								<td><input type="text" name="mulai"  id="tanggal"></td>
-								<script type="text/javascript">
-									
-									</script>
-							</tr>
-							<tr class="modal-body">
-								<td>Tanggal Selesai</td>
-								<td>:</td>
-								<td><input type="text" name="selesai"  id="tanggal1"></td>
-							<script type="text/javascript">
-									
-									</script>
-							</tr>
-					</table>
-					<table>
-					<tr>
-						<td><button class="submit" name="simpan" type="submit">Simpan</td>
-						<td><button class="submit" type="submit" name="batal" onClick="self.history.back()">Batal</button></td>
-					</tr>
-					</table>
-					
-					
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="button" class="simpan btn btn-primary" class="submit" name="simpan" type="submit">Save changes</button>
-                    </div>
-					</form>
-					<script src="<?php echo base_url() ?>assets/js/bootstrap-modal.js"></script>
-					<script src="<?php echo base_url() ?>assets/js/bootstrap-transition.js"></script>
-					<script src="<?php echo base_url() ?>assets/js/bootstrap-datetimepicker.js"></script>
-					<?php
-						if(isset($_POST['simpan'])){
-							extract($_POST);
-							
-							$simpan="insert into transaksi(id_rumah,id,status,tanggal_mulai,tanggal_selesai) values
-									('$id_rumah',$id,'1','$mulai','$selesai')";
-							$ganti="update rumah set
-							 verifikasi='3' where id_rumah='$id_rumah'";
-							$hasil1=mysql_query($ganti)or die(mysql_error());
-							$hasil=mysql_query($simpan)or die(mysql_error());
-							echo"berhasil";
-						}
-					?>
-					
+    <div class="atas">
+		<center><img src="<?php echo base_url() ?>assets/images/templatemo_logo.png" width="400px"/></center>
+		<a href="<?php echo base_url('index.php/login/logout'); ?>" onClick='return logout()'><div class="pojok1">Sign Out</div></a>
+		<a href="<?php echo base_url('index.php/login/indexlogin'); ?>"<div class="pojok">Kembali</div></a>
+			</div>
+			
+			
+        
+					<div class="modal-body">					
+					<div id="petaku" style="width:100%; height:450px"></div>
+					<!--<?php foreach ($query->result_array() as $row)
+	{ ?>
+					<p> <?php echo $row['id_lokasi'];?></p>
+					<?php } ?>-->
+                    </div>				
 					
                 </div>
             </div>
         </div>
-		
-		
-			<div class="atas">
-		<center><img src="<?php echo base_url() ?>assets/images/templatemo_logo.png" width="400px"/></center>
-		<a href="../logout.php" onClick='return logout()'><div class="pojok1">Sign Out</div></a>
-		<a href="../index2.php"<div class="pojok">Kembali</div></a>
-			</div>
-	<div class="tengah">
-			<?php
-			$hal2=isset($_GET['hal2'])?$_GET['hal2']:"";
-			if($hal2){
-				require_once ($hal2.".php");
-			}else{
-				require_once ("guesthouse.php");
-			}
-		?>
-	</div>	
-	
-		
-	<script src="<?php echo base_url() ?>assets/js/jquery.min.js"></script>
-        <script src="<?php echo base_url() ?>assets/js/bootstrap.min.js"></script>
-        <script src="<?php echo base_url() ?>assets/dist/js/jquery.gridder.js"></script>
-        <script>
-            jQuery(document).ready(function ($) {
-
-                // Call Gridder
-                $(".gridder").gridderExpander({
-                    scrollOffset: 60,
-                    scrollTo: "panel", // "panel" or "listitem"
-                    animationSpeed: 400,
-                    animationEasing: "easeInOutExpo",
-                    onStart: function () {
-                        console.log("Gridder Inititialized");
-                    },
-                    onExpanded: function (object) {
-                        console.log("Gridder Expanded");
-                        $(".carousel").carousel();
-                    },
-                    onChanged: function (object) {
-                        console.log("Gridder Changed");
-                    },
-                    onClosed: function () {
-                        console.log("Gridder Closed");
-                    }
-                });
-            });
-        </script>
-	
-        <script src="<?php echo base_url() ?>assets/2/jquery-1.11.2.min.js"></script>
-        <script src="<?php echo base_url() ?>assets/2/bootstrap.js"></script>
-        <script>
-        $(function(){
-            $(document).on('click','.edit-record',function(e){
-                e.preventDefault();
-                $("#myModal").modal('show');
-                $.post('hasil.php',
-                    {id:$(this).attr('data-id')},
-                    function(html){
-                        $(".modal-body").html(html);
-                    }   
-                );
-            });
-        });
-    </script>
     </body>
 </html>
-<!--harviacode.com-->

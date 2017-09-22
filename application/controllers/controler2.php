@@ -1,5 +1,4 @@
 <?php
-
 // // // // // // // // // // // // // // // //
 // Controler2 buat function-function admin   //
 // // // // // // // // // // // // // // // //

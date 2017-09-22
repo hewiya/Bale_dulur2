@@ -52,7 +52,7 @@
             <div class="top-menu">
             	<ul class="nav pull-right top-menu">
               <li><p class="hello">Hello , <?php echo $this->session->userdata("nama"); ?></p></li>
-                    <li><a class="logout" href="<?php echo base_url('index.php/login/logout_admin'); ?>">Logout</a></li>
+                    <li><button class="logout" id="logout_btn" onclick="return logout()"><a href="<?php echo base_url('index.php/login/logout_admin'); ?>">Logout</a></button></li>
             	</ul>
             </div>
         </header>
@@ -185,7 +185,7 @@
 
     <!--script for this page-->
     <script src="<?php echo base_url() ?>assets/admin/assets/js/sparkline-chart.js"></script>    
-	<script src="<?php echo base_url() ?>assets/admin/assets/js/zabuto_calendar.js"></script>	
+	 <script src="<?php echo base_url() ?>assets/admin/assets/js/zabuto_calendar.js"></script>	
 	
 	<!--<script type="text/javascript">
         $(document).ready(function () {
@@ -209,30 +209,34 @@
 	</script>-->
 	
 	<script type="application/javascript">
-        $(document).ready(function () {
-            $("#date-popover").popover({html: true, trigger: "manual"});
-            $("#date-popover").hide();
-            $("#date-popover").click(function (e) {
-                $(this).hide();
-            });
+        //
+        //  Date
+        //
+
+        // $(document).ready(function () {
+        //     $("#date-popover").popover({html: true, trigger: "manual"});
+        //     $("#date-popover").hide();
+        //     $("#date-popover").click(function (e) {
+        //         $(this).hide();
+        //     });
         
-            $("#my-calendar").zabuto_calendar({
-                action: function () {
-                    return myDateFunction(this.id, false);
-                },
-                action_nav: function () {
-                    return myNavFunction(this.id);
-                },
-                ajax: {
-                    url: "show_data.php?action=1",
-                    modal: true
-                },
-                legend: [
-                    {type: "text", label: "Special event", badge: "00"},
-                    {type: "block", label: "Regular event", }
-                ]
-            });
-        });
+        //     $("#my-calendar").zabuto_calendar({
+        //         action: function () {
+        //             return myDateFunction(this.id, false);
+        //         },
+        //         action_nav: function () {
+        //             return myNavFunction(this.id);
+        //         },
+        //         ajax: {
+        //             url: "show_data.php?action=1",
+        //             modal: true
+        //         },
+        //         legend: [
+        //             {type: "text", label: "Special event", badge: "00"},
+        //             {type: "block", label: "Regular event", }
+        //         ]
+        //     });
+        // });
         
         
         function myNavFunction(id) {
@@ -241,6 +245,15 @@
             var to = $("#" + id).data("to");
             console.log('nav ' + nav + ' to: ' + to.month + '/' + to.year);
         }
+
+        function logout() {
+          if (confirm ("ingin logout ?")){
+            return true;
+            }else{
+            return false;
+            } 
+        }
+         
     </script>
   
 

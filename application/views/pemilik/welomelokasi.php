@@ -5,5 +5,5 @@
 	Tidak punya tempat untuk disewakan?<br/>
 	Anda bisa mendapatkan uang dengan menjadi tuan rumah untuk orang lain sebagai rekan tuan rumah lingkungan.
 	<br/><br/><br/><br/>
-	<div class="daftar"><a href="<?php echo base_url('index.php/login/indexpemilik?hal=latlong/index'); ?>" role="button" data-toggle="modal"><div class="dudul">Mulai Menerima Tamu</div></a></div>
+	<div class="daftar"><a href="<?php echo base_url('index.php/user/indexpemilik?hal=latlong/index'); ?>" role="button" data-toggle="modal"><div class="dudul">Mulai Menerima Tamu</div></a></div>
 </div>

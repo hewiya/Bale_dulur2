@@ -7,7 +7,10 @@ F.A.Q
 Q: login admin di mana ?
 A: http://localhost/CI_bale_dulur/index.php/login/loginadmin
 
-Q: framework pake apa tidak ? kalo iya framework apa ?
+Q: waktu di jalankan di komputer lain, banyak asset yg ga keluar !?
+A: di CI > application > config > config.php  coba di sesuakan alamat base nya. (ex: base url : "http://localhost/CI_Bale_dulur/" karena nama folder di htdocs kami nya CI_Bale_dulur
+
+Q: pake framework ? kalo iya framework apa ?
 A: pake Framework CI 3.1.4
 
 Q: ada git nya ?
@@ -21,7 +24,7 @@ Q: dokumentasi lain ?
 A: kita ada dokumentasi di coding PHP dan html nya dan di file dokumentasi.txt
 
 Q: database ?
-A: kita pake mysql , databse nya namanya "bale" sudah ada di dalam CI tinggal export
+A: kita pake mysql , databse nya namanya "bale" sudah ada di dalam CI tinggal export atau minta supervisor
 
 Q: ada error di js/ajax nya !
 A: coba buka pake chrome terbaru untuk ajax

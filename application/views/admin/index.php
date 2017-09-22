@@ -1,6 +1,10 @@
 <?php
-	$this->session->sess_destroy();
-	//include("admin/configg.php");
+	 $this->session->sess_destroy();
+	// //include("admin/configg.php");
+
+	// if(!$_SESSION['status']) {
+ //    header("location:index");
+	// }
 ?>
 <html lang="en">
   <head>

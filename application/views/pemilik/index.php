@@ -59,6 +59,7 @@
 				}else{
 					require_once ("welomelokasi.php");
 				}
+				// $this->load->view('pemilik/welomelokasi');
 			?>
 			</div>
 			

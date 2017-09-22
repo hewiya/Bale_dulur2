@@ -61,7 +61,7 @@
 	</div>
 	<div id="adah">
 		<a href="<?php echo base_url('index.php/login/indexpenyewa'); ?>"><div id="kotak">&nbsp;&nbsp;&nbsp;Mulai Cari Rumah</div></a><br/>
-		<a href="<?php echo base_url('index.php/login/indexpemilik'); ?>"><div id="kotak">&nbsp;&nbsp;&nbsp;Menjadi Tuan Rumah</div></a><br/>
+		<a href="<?php echo base_url('index.php/user/indexpemilik'); ?>"><div id="kotak">&nbsp;&nbsp;&nbsp;Menjadi Tuan Rumah</div></a><br/>
 		<div class="login"><a href="#"><div id="kotak">&nbsp;&nbsp;&nbsp;Sign In</div></a></div>
 		<div id="bg"></div>
 				<div id="modal-kotak">   <!--    sumthing      -->

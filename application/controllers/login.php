@@ -133,11 +133,17 @@ class Login extends CI_Controller{
 	}
 	
 	function indexpenyewa(){
-		$this->load->view('penyewa/index');
-	}
-	
-	function indexpemilik(){
-		$this->load->view('pemilik/index');
+		$this->load->model('m_lokasi');
+		$data['query']=$this->m_lokasi->tampil_data();
+		$this->load->library('session');
+		if($this->session->userdata('status')){
+			$this->load->view('penyewa/index',$data);
+		} else {
+			?> <script>
+				window.alert('Silahkan login terlebih dahulu !');
+				window.location=(href='<?php echo base_url('index.php/login/index') ?>');
+			</script> <?php
+		}
 	}
 
 	function profilpenyewa(){

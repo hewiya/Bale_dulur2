@@ -1,3 +1,13 @@
+====================
+PKL KOMSI UGM 2017
+====================
+dokumentasi bisa di lihat di folder dokumentasi.
+
+ijin pull bebas.
+
+github.com/hewiya
+
+
 ###################
 What is CodeIgniter
 ###################
